@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
@@ -8,6 +9,8 @@ import { Wrapper } from '../components/Wrapper';
 import { styled } from '../stitches.config';
 
 import styles from "../styles/home.module.css";
+
+import gorila from "../public/static/images/gorila.png";
 
 export async function getStaticProps() {
   return {
@@ -27,7 +30,7 @@ export default function Index(props) {
     props;
 
   return (
-    <Wrapper>
+    <Wrapper style={{flexDirection: 'row', alignItems: 'center'}}>
       <Head>
         <title>{name}</title>
         <meta content={name} property="og:title" />
@@ -63,6 +66,7 @@ export default function Index(props) {
           </PostContainer>
         </PostContent>
       </Home>
+        <Image src={gorila} draggable='false' layout='fixed' className={styles.gorila}/>
     </Wrapper>
   );
 }
@@ -71,6 +75,7 @@ const Home = styled(PostMain, {
   alignItems: 'center',
   display: 'flex',
   margin: '0 auto',
+  marginLeft: '5vw',
   '@bp2': { width: 800 },
 });
 
