@@ -86,9 +86,10 @@ export default function Navbar() {
             type="button"
             aria-label="Command"
             onClick={query.toggle}
-            css={{ padding: '0 8px' }}
+            css={{ padding: '0 8px', alignItems: 'center' }}
           >
-            <Icon className="ri-command-line" />
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path fill="currentColor" d="M3 11h14V9H3v2zm0 5h14v-2H3v2zM3 4v2h14V4H3z"/></svg>
+  
           </ButtonHeader>
         </Aside>
       </Header>
@@ -122,12 +123,15 @@ const List = styled('ul', {
 });
 
 const ButtonHeader = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlign: 'center',
   appearance: 'none',
   background: 'transparent',
   border: 'none',
   borderRadius: '$borderRadius',
   color: 'white',
-  cursor: 'pointer',
   cursor: 'pointer',
   height: '34px',
   padding: '0 10px',
